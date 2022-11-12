@@ -89,6 +89,13 @@ const calcularPrestamo = (moneda) => {
 //funcion saludar despedida
 const saludar = () => alert('Gracias por confiar en nosotros!!!');
 
+//funcion principal
+const cotizador = (moneda) => {
+  solicitarMonto(moneda);
+  solicitarCuotas(moneda);
+  calcularPrestamo(moneda);
+  saludar();
+}
 
 //inicio del programa
 alert('Bienvenidos a Préstamos Online!\n' +
@@ -114,18 +121,12 @@ while (opcion === -1) {
 switch (opcion) {
   case 1: {
     moneda = 'dólares';
-    solicitarMonto(moneda);
-    solicitarCuotas(moneda);
-    calcularPrestamo(moneda);
-    saludar();
+    cotizador(moneda);
     break;
   }
   case 2: {
     moneda = 'pesos';
-    solicitarMonto(moneda);
-    solicitarCuotas(moneda);
-    calcularPrestamo(moneda);
-    saludar();
+    cotizador(moneda);
     break;
   }
   default: {
